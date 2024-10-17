@@ -148,7 +148,7 @@
 	letter-spacing: 0.5px;
 }
 .icon-wrap {
-	background: #fde6e6;
+	background: #abb1bd;
 	width: 120px;
 	height: 120px;
 	border-radius: 50%;
@@ -218,7 +218,7 @@
 	color: #000;
 }
 .featured-listing-wrap h4 a:hover {
-	color: #fa2837;
+	color: #2237ac;
 }
 .listing-image {
 	margin: 0 auto 15px;
@@ -257,7 +257,7 @@
 	float: left;
 	width: 50%;
 	padding: 60px 100px 40px 70px;
-	background: #fa2837;
+	background: #2237ac;
 	color: #fff;
 	position: relative;
 }
