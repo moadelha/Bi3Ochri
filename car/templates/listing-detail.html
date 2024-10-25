@@ -26,7 +26,7 @@
       </div>
       <div class="col-md-3">
         <div class="price_info">
-          <p>{{car.expected_selling_price| intcomma}} Rs</p>
+          <p>{{car.expected_selling_price| intcomma}} MAD</p>
           
         </div>
       </div>
@@ -309,33 +309,6 @@
             <p><span>City:</span> {{car.car_city| title}}</p>
             <p><span>Phone:</span> {{car.car_owner_phone_number}}</p>
           {% endif %}
-      <!--
-      <div class="modal-body">
-        
-          <div class="login_wrap">
-		  	{% if error_message %}
-                <p><strong id="error">{{ error_message }}</strong></p>
-            {% endif %}
-            
-              <form action="/login" method="post">
-              {% csrf_token %}
-                
-                <div class="form-group">
-                  <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Username or Email address*"  required>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control" id="loginpass" name="loginpass" placeholder="Password*"  required>
-                </div>
-                <div class="form-group">
-                  <input type="submit" value="Login" class="btn btn-block">
-                </div>
-              </form>
-            
-
-          
-        </div>
-      </div>
-        -->
       
     </div>
   </div>
@@ -370,70 +343,31 @@
             <p><span>City:</span> {{car.car_city| title}}</p>
             <p><span>Phone:</span> {{car.car_owner_phone_number}}</p>
           {% endif %}
-      <!--
-      <div class="modal-body">
-        
-          <div class="login_wrap">
-		  	{% if error_message %}
-                <p><strong id="error">{{ error_message }}</strong></p>
-            {% endif %}
-            
-              <form action="/login" method="post">
-              {% csrf_token %}
-                
-                <div class="form-group">
-                  <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Username or Email address*"  required>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control" id="loginpass" name="loginpass" placeholder="Password*"  required>
-                </div>
-                <div class="form-group">
-                  <input type="submit" value="Login" class="btn btn-block">
-                </div>
-              </form>
-            
 
-          
-        </div>
-      </div>
-        -->
+
+          <!-- Adding Loan Simulator -->
+          <section id="loan_simulator" class="loan-simulator">
+            <h3>Loan Simulator</h3>
+            <div class="row">
+              <!-- Input for Car Price (populated dynamically) -->
+              <div class="col-md-4">
+                <label>Car Price</label>
+                <input type="text" id="car_price" value="{{ car.expected_selling_price }}" readonly class="form-control">
+              </div>
+              <!-- Loan Duration Input -->
+              <div class="col-md-4">
+                <label>Loan Duration (in months)</label>
+                <input type="number" id="loan_duration" placeholder="Enter months (e.g., 12, 24)" class="form-control" min="1">
+              </div>
+              <!-- Monthly Payment Display -->
+              <div class="col-md-4">
+                <label>Estimated Monthly Payment</label>
+                <input type="text" id="monthly_payment" readonly class="form-control">
+              </div>
+            </div>
+          </section>
+
       
-    </div>
-  </div>
-</div>
-<!--/submit_otp--> 
-
-
-<!--get_details is no more useful, now information 
-is directly avilable on the listing detail page through sessions-->
-
- <!--get_details 
-<div class="modal fade" id="get_details">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Dealer Contact Details</h3>
-      </div>
-
-
-            <p><span>Name:</span> {{car.car_owner_name| title}}</p>
-            <p><span>City:</span> {{car.car_city| title}}</p>
-            <p><span>Phone:</span> {{car.car_owner_phone_number}}</p>
-          
-
-      <div class="modal-footer text-center">
-        <p>Don't have an account? <a href="" data-toggle="modal" data-target ="#signupModal" data-dismiss="modal">Signup Here</a></p></br>
-        <p><a href="#forgotpassword" data-toggle="modal" data-dismiss="modal">Forgot Password ?</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-/get_details--> 
-
-
-
 {% block scripts %}
 
 {% comment %} <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> {% endcomment %}
@@ -468,10 +402,21 @@ $(document).ready(function() {
 });
 </script> {% endcomment %}
 
-
+<script>
+  document.getElementById('loan_duration').addEventListener('input', function() {
+      const carPrice = parseFloat(document.getElementById('car_price').value.replace(/,/g, '')) || 0;
+      const loanDuration = parseInt(document.getElementById('loan_duration').value) || 0;
+      const monthlyPayment = loanDuration > 0 ? (carPrice / loanDuration).toFixed(2) : 0;
+      document.getElementById('monthly_payment').value = monthlyPayment ? monthlyPayment + ' Rs' : '';
+  });
+  </script>
+  
 
 
 {% endblock %}
 
 
+
+
 {% endblock %}
+
