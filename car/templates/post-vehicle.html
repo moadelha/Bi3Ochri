@@ -99,7 +99,7 @@
               <input class="form-control white_bg" id="car_version" name="car_version" type="text">
             </div>
             <div class="form-group">
-              <label class="control-label">Vehicle Colour</label>
+              <label class="control-label">Vehicle Color</label>
               <input class="form-control white_bg" id="car_color" name="car_color" type="text" >
             </div>
             <div class="form-group">
@@ -167,7 +167,7 @@
             </div>
             <div class="form-group">
               <label class="control-label">Registration Number</label>
-              <input class="form-control white_bg" id="registration_number" name="registration_number" type="text" placeholder="RJ20 CD XXXX" >
+              <input class="form-control white_bg" id="registration_number" name="registration_number" type="text" placeholder="1111 B 6" >
             </div>
             <div class="form-group">
               <label class="control-label">Vehicle Overview  Description</label>
@@ -193,7 +193,7 @@
                   <option>Bike</option>
                   <option>Truck</option>
                   <option>Tractor</option>
-                  <option>Auto Rikshaw</option>
+                  <!--<option>Auto Rikshaw</option>-->
                   <option>Agriculture Instrument</option>
                 </select>
               </div>
@@ -265,8 +265,25 @@
                   <option>Agriculture Instrument</option>
                 </select>
               </div>
-
               <div class="form-group">
+                <label class="control-label">Phone Number</label>
+                <input class="form-control white_bg" id="linkedin" name="car_owner_phone_number" type="text" onkeypress="return isNumber(event)"> 
+              </div>
+              <div class="form-group">
+                <label class="control-label" style="color:red;">"*"</label>
+                <label class="control-label"> marked fields are neccessory.</label>
+                <br>
+                <div class="form-group">
+                    
+                    <label for="terms_agree">By submitting vehicle details, You also accepted the <a href="/privacy.html">Privacy and Policy Agreement</a></label>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn">Submit Vehicle <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+                </div>
+                
+              </div>
+
+              <!--<div class="form-group">
                   <label class="form-label">Price Range (MAD)</label>
                   <input id="price_range1" name= "slider" data-slider-id='ex1Slider' type="text" class="span2" value="" data-slider-min="0" data-slider-max="2000000" data-slider-step="100000" data-slider-value="[100000,1200000]" tooltip="always"/>
                   
@@ -274,7 +291,7 @@
 
               <div class="form-group">
                 <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Search Car</button>
-              </div>
+              </div>-->
             </form>
           </div>
         </div>
@@ -402,7 +419,7 @@
               <label class="control-label">Phone Number</label>
               <input class="form-control white_bg" id="linkedin" name="car_owner_phone_number" type="text" onkeypress="return isNumber(event)"> 
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
               <label class="control-label" style="color:red;">"*"</label>
               <label class="control-label"> marked fields are neccessory.</label>
               <br>
@@ -414,7 +431,7 @@
             </div>
             <div class="form-group">
               <button type="submit" class="btn">Submit Vehicle <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
-            </div>
+            </div>-->
           </form>
         </div>
       </div>

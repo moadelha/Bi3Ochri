@@ -66,9 +66,9 @@ def search(request):
         car_city = request.GET.get('city')
         vehicle_type = request.GET.get('vehicle_type')
         slider_range = request.GET.get('slider')
-        range_list = slider_range.split(",")
-        min = range_list[0]
-        max = range_list[1]
+        #range_list = slider_range.split(",")
+        #min = range_list[0]
+        #max = range_list[1]
         price_result = Car.objects.filter(expected_selling_price__range=(min, max))
         # price_result = Car.objects.raw('select expected_selling_price from car_car where expected_selling_price between "'+min+'" and "'+max+'" ')
         
