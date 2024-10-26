@@ -1,6 +1,7 @@
 # Developper
 
 This was a solo project for my portfolio at ALXand i wouldn't have been able to complete it without a number of ressource mainly:
+https://www.youtube.com/watch?v=u6R4vBa7ZK4&list=PLCC34OHNcOtpRfBYk-8y0GMO4i1p1zn50 (build Ecommerce website)
 https://github.com/Macainian/Django-Search-Filter-Sort (Search and sort)
 CodeAstro (youtube chanel) HTML and css
 
