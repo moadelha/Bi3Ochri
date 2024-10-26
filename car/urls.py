@@ -5,7 +5,7 @@ from car import views
 urlpatterns = [
     
     path('', views.index, name = "index"),
-    path('index.html', views.index, name = "index"),
+    path('index-3.html', views.index, name = "index"),
     path('listing-classic.html', views.listing_classic, name = "listing-classic"),
     path('listing-detail.html/<int:myid>', views.listing_detail, name = "listing-detail"),
     path('listing-detail.html/<int:myid>/', views.listing_detail, name = "listing-detail"),
